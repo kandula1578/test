@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: my-deploy
+spec:
+    strategy:
+         type: RollingUpdate 
+    replicas: 2
+    selector: 
+       matchLabels:
+        name: test 
+    template:
+      metadata: 
+          name: myapp-httpd
+          labels:
+              name: test
+      spec:
+          containers:
+              - image: httpd
+                name: myapp-httpd
+                ports:
+                  - containerPort: 80
+                    protocol: TCP

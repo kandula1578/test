@@ -5,7 +5,7 @@ metadata:
 spec:  
         selector: 
                 name: test
-                version: v1 
+                version: v2 
         ports: 
                  - name: nginxport
                    port: 80    #nginx port running inside the pod
